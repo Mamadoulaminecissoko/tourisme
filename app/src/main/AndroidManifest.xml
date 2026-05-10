@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SenegalTourisme">
+
+        <!-- 1. Page d'Accueil (Le point de départ unique) -->
+        <activity
+            android:name=".HomeActivity"
+            android:label="Sénégal Tourisme"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 2. Liste des Sites (Parent de DetailActivity) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="Nos Sites Touristiques" />
+
+        <!-- 3. Page de Détails (Retourne vers MainActivity) -->
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false"
+            android:label="Détails du lieu"
+            android:parentActivityName=".MainActivity" />
+
+    </application>
+
+</manifest>

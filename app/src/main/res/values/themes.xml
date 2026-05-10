@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SenegalTourisme" parent="Theme.Material3.DayNight">
+        <!-- Couleur de fond de la barre (Vert Sénégal) -->
+        <item name="colorPrimary">#2E7D32</item>
+
+        <!-- Couleur de la barre d'état (Heure, Batterie) -->
+        <item name="colorPrimaryVariant">#1B5E20</item>
+
+        <!-- Couleur du texte et des icônes sur le vert -->
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Enlever l'ombre sous la barre pour un look moderne -->
+        <item name="elevation">0dp</item>
+
+        <!-- Couleur secondaire (pour les boutons ou accents) -->
+        <item name="colorSecondary">#FFD600</item> <!-- Un beau Jaune Sénégal -->
+    </style>
+
+    <style name="Theme.SenegalTourisme" parent="Base.Theme.SenegalTourisme" />
+</resources>
