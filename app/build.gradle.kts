@@ -4,9 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.senegaltourisme"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.senegaltourisme"

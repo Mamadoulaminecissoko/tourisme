@@ -23,18 +23,38 @@
             </intent-filter>
         </activity>
 
-        <!-- 2. Liste des Sites (Parent de DetailActivity) -->
+        <!-- 2. LoginActivity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="Connexion" />
+
+        <!-- 3. Liste des Sites (Parent de DetailActivity) -->
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="Nos Sites Touristiques" />
 
-        <!-- 3. Page de Détails (Retourne vers MainActivity) -->
+        <!-- 4. Page de Détails (Retourne vers MainActivity) -->
         <activity
             android:name=".DetailActivity"
             android:exported="false"
             android:label="Détails du lieu"
             android:parentActivityName=".MainActivity" />
+
+        <!-- 5. Liste des Hôtels (Retourne vers DetailActivity) -->
+        <activity
+            android:name=".HotelListActivity"
+            android:exported="false"
+            android:label="Hôtels"
+            android:parentActivityName=".DetailActivity" />
+
+        <!-- 6. Réservation d'un hôtel (Retourne vers HotelListActivity) -->
+        <activity
+            android:name=".BookingActivity"
+            android:exported="false"
+            android:label="Réservation"
+            android:parentActivityName=".HotelListActivity" />
 
     </application>
 

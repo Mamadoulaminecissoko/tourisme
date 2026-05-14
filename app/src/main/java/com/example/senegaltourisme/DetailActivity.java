@@ -30,6 +30,8 @@ public class DetailActivity extends AppCompatActivity {
         TextView txtNom = findViewById(R.id.detailTitle);
         TextView txtDesc = findViewById(R.id.detailDescription);
         Button btnMap = findViewById(R.id.btnMap);
+        Button btnHotels = findViewById(R.id.btnHotels);
+        Button btnReview = findViewById(R.id.btnReview);
 
         // Récupération des données passées par l'Adapter
         String nom = getIntent().getStringExtra("NOM_SITE");
@@ -40,6 +42,34 @@ public class DetailActivity extends AppCompatActivity {
         txtNom.setText(nom);
         txtDesc.setText(desc);
         img.setImageResource(imageId);
+
+        // Action du bouton Hôtels
+        btnHotels.setOnClickListener(v -> {
+            Intent intent = new Intent(DetailActivity.this, HotelListActivity.class);
+            intent.putExtra("SITE_NAME", nom);
+            startActivity(intent);
+        });
+
+        // Action du bouton Avis
+        btnReview.setOnClickListener(v -> {
+            android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+            builder.setTitle("Votre avis sur " + nom);
+
+            final android.widget.EditText input = new android.widget.EditText(this);
+            input.setHint("Écrivez votre avis ici...");
+            builder.setView(input);
+
+            builder.setPositiveButton("Envoyer", (dialog, which) -> {
+                String avis = input.getText().toString().trim();
+                if(!avis.isEmpty()){
+                    Toast.makeText(this, "Merci pour votre avis !", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "L'avis ne peut pas être vide.", Toast.LENGTH_SHORT).show();
+                }
+            });
+            builder.setNegativeButton("Annuler", (dialog, which) -> dialog.cancel());
+            builder.show();
+        });
 
         // Action du bouton Maps avec sécurité
         btnMap.setOnClickListener(v -> {

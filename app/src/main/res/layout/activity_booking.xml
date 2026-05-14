@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FAFAFA">
+
+    <TextView
+        android:id="@+id/tvBookingHotelName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Réservation : Nom Hôtel"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvBookingPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prix : 0 FCFA/nuit"
+        android:textSize="18sp"
+        android:textColor="#27A869"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date d'arrivée :"
+        android:textSize="16sp"
+        android:textColor="#666666" />
+
+    <EditText
+        android:id="@+id/editDateArrivee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="JJ/MM/AAAA"
+        android:inputType="date"
+        android:padding="12dp"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date de départ :"
+        android:textSize="16sp"
+        android:textColor="#666666" />
+
+    <EditText
+        android:id="@+id/editDateDepart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="JJ/MM/AAAA"
+        android:inputType="date"
+        android:padding="12dp"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="32dp"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnConfirmBooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirmer la réservation"
+        android:backgroundTint="#27A869"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -34,8 +34,8 @@ public class HomeActivity extends AppCompatActivity {
 
         // 2. On définit ce qui se passe quand on clique dessus
         btnExplore.setOnClickListener(v -> {
-            // On crée une intention (Intent) pour aller de "Home" vers "Main"
-            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+            // On crée une intention (Intent) pour aller vers LoginActivity
+            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
             startActivity(intent);
         });
     }
