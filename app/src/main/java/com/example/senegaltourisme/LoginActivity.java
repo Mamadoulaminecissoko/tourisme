@@ -22,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText editEmail = findViewById(R.id.editEmail);
         EditText editPassword = findViewById(R.id.editPassword);
         Button btnLogin = findViewById(R.id.btnLogin);
+        android.widget.TextView tvGoToRegister = findViewById(R.id.tvGoToRegister);
 
         btnLogin.setOnClickListener(v -> {
             String email = editEmail.getText().toString().trim();
@@ -36,6 +37,11 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish(); // Empêche de revenir à l'écran de login avec le bouton Retour
             }
+        });
+
+        tvGoToRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
     }
 }

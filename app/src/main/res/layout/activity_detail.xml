@@ -1,80 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#F5F5F5">
 
-    <!-- Image du haut -->
-    <ImageView
-        android:id="@+id/detailImage"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_background" />
-
-    <!-- Titre du lieu -->
-    <TextView
-        android:id="@+id/detailTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Nom du Lieu"
-        android:textColor="#000000"
-        android:textSize="28sp"
-        android:textStyle="bold" />
-
-    <!-- Zone de texte défilante pour la description -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/detailDescription"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Description ici..."
-            android:textColor="#444444"
-            android:textSize="16sp" />
+            android:paddingBottom="24dp">
+
+            <!-- Hero Image -->
+            <ImageView
+                android:id="@+id/detailImage"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Content Card Overlapping Image -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-40dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp"
+                app:layout_constraintTop_toBottomOf="@id/detailImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/detailTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nom du Lieu"
+                        android:textColor="#333333"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp" />
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="4dp"
+                        android:background="#2E7D32"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/detailDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Description ici..."
+                        android:textColor="#555555"
+                        android:lineSpacingExtra="6dp"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <!-- Les boutons d'action (Ajoutés en bas) -->
+    <!-- Bottom Action Bar -->
     <LinearLayout
+        android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:elevation="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnHotels"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#27A869"
+            android:layout_height="56dp"
             android:text="Hôtels à proximité"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
+            android:textSize="16sp"
+            app:cornerRadius="12dp"
+            app:backgroundTint="#2E7D32"
             android:layout_marginBottom="8dp" />
 
-        <Button
-            android:id="@+id/btnMap"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#2196F3"
-            android:text="Voir sur Google Maps"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnReview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FF9800"
-            android:text="Laisser un avis"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMap"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="Carte"
+                app:cornerRadius="12dp"
+                android:layout_marginEnd="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReview"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="Avis"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

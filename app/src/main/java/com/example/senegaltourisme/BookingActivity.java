@@ -41,6 +41,11 @@ public class BookingActivity extends AppCompatActivity {
             if (arrivee.isEmpty() || depart.isEmpty()) {
                 Toast.makeText(this, "Veuillez renseigner les dates", Toast.LENGTH_SHORT).show();
             } else {
+                if (hotel != null) {
+                    Reservation reservation = new Reservation(hotel, arrivee, depart);
+                    ReservationManager.getInstance().addReservation(reservation);
+                }
+                
                 Toast.makeText(this, "Réservation confirmée avec succès !", Toast.LENGTH_LONG).show();
                 finish(); // Retourne à l'écran précédent
             }

@@ -19,6 +19,21 @@
         android:layout_height="match_parent"
         android:background="#66000000" />
 
+    <!-- Profil en haut à droite -->
+    <ImageView
+        android:id="@+id/btnProfileHome"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:src="@android:drawable/ic_menu_myplaces"
+        app:tint="#FFFFFF"
+        android:padding="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

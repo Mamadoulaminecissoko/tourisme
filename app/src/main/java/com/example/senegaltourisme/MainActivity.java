@@ -31,11 +31,14 @@ public class MainActivity extends AppCompatActivity {
         // Préparation des données
         List<Site> siteList = new ArrayList<>();
         // Note : Vérifie bien que les noms d'images (goree, monument...) existent dans ton dossier drawable
-        siteList.add(new Site("Île de Gorée", "Un lieu chargé d'histoire...", R.drawable.goree, "14.6667,-17.4000"));
-        siteList.add(new Site("Monument de la Renaissance", "Une statue imposante...", R.drawable.monument, "14.7219,-17.4948"));
-        siteList.add(new Site("Lac Rose", "Un lac salé aux reflets roses...", R.drawable.lac_rose, "14.8392,-17.2281"));
-        siteList.add(new Site("Cap Skirring", "Les plus belles plages de Casamance, un vrai paradis.", R.drawable.cap, "12.3500,-16.7333"));
+        siteList.add(new Site("Île de Gorée", "Un lieu chargé d'histoire, symbole de la mémoire de la traite négrière.", R.drawable.goree, "14.6667,-17.4000"));
+        siteList.add(new Site("Monument de la Renaissance", "Une statue imposante en bronze représentant une famille africaine.", R.drawable.monument, "14.7219,-17.4948"));
+        siteList.add(new Site("Lac Rose", "Un lac salé mondialement connu pour ses reflets roses uniques.", R.drawable.lac_rose, "14.8392,-17.2281"));
+        siteList.add(new Site("Cap Skirring", "Les plus belles plages de Casamance, un vrai paradis tropical.", R.drawable.cap, "12.3500,-16.7333"));
         siteList.add(new Site("Îles du Saloum", "Un delta magnifique classé à l'UNESCO, entre mangrove et mer.", R.drawable.saloum, "13.8333,-16.5000"));
+        siteList.add(new Site("Saint-Louis", "Ancienne capitale au charme colonial, célèbre pour son festival de jazz.", R.drawable.garde, "16.0333,-16.4833"));
+        siteList.add(new Site("Désert de Lompoul", "De magnifiques dunes de sable ocre pour une nuit inoubliable à la belle étoile.", R.drawable.lac_rose, "15.4419,-16.6661"));
+        siteList.add(new Site("Parc de Djoudj", "La troisième plus grande réserve ornithologique du monde.", R.drawable.cap, "16.3333,-16.2500"));
         // Liaison avec l'Adapter
         SiteAdapter adapter = new SiteAdapter(siteList);
         recyclerView.setAdapter(adapter);
@@ -81,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_search) {
             Toast.makeText(this, "Recherche en cours...", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.action_profile) {
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
             return true;
         }
 

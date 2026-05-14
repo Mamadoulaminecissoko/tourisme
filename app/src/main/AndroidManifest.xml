@@ -29,6 +29,12 @@
             android:exported="false"
             android:label="Connexion" />
 
+        <!-- 2.5. RegisterActivity -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:label="Création de compte" />
+
         <!-- 3. Liste des Sites (Parent de DetailActivity) -->
         <activity
             android:name=".MainActivity"
@@ -55,6 +61,12 @@
             android:exported="false"
             android:label="Réservation"
             android:parentActivityName=".HotelListActivity" />
+
+        <!-- 7. Profil et Historique des réservations -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="Mon Profil" />
 
     </application>
 
